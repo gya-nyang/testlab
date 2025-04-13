@@ -1,0 +1,16 @@
+
+    ResearchSection = {
+        "text": "인공지능과 화학 연구를 융합하여 신소재 개발을 가속화하고 화학 반응 예측을 향상시키는 데 집중하고 있습니다",
+    }
+
+    PublicationSection = {
+        "text": "여기에 텍스트 입력",
+        "image": [
+            // 순서에 맞게 "" 안에 파일명 입력
+            // 이미지 파일은 images/publication/ 경로에 넣기
+            "ACSCentSci_Fron_cover.jpg",
+            "JACSAu_Fornt_cover.jpg",
+            "JCIM_Fornt_cover.jpg",
+            "NJC_Front_cover.png"
+        ]
+    }

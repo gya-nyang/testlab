@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAIL</title>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/sub.css">
+</head>
+<body>
+  <header></header>
+  <main>
+    <section class="spot">
+        course
+    </section>
+    <section class="course_wrap">
+        <div class="wrap">
+            <!-- <nav class="nav">
+                <ul class="cate_list">
+                    <li class="active">
+                        <a>AI4Chem</a>
+                    </li>
+                    <li>
+                        <a>미래의</a>
+                    </li>
+                    <li>
+                        <a>과목들</a>
+                    </li>
+                </ul>
+            </nav> -->
+            <div class="data_wrap">
+                <div class="header">
+                    <div>Week</div>
+                    <div>Topic</div>
+                    <div>Link to materials</div>
+                </div>
+                <div class="rows">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+  <footer></footer>
+
+  <!-- header, footer -->
+  <script src="./data/common.json"></script>
+  <script src="./js/common.js"></script>
+
+  <script src="./data/course.json"></script>
+
+
+  <script>
+    const cate_list = document.querySelectorAll('.cate_list li')
+
+    cate_list.forEach((cate, i) => {
+        cate.addEventListener('click', e => {
+            cate_list.forEach(disable => disable.classList.remove('active'))
+            cate.classList.add('active')
+        })
+    })
+
+
+    const AI4Chem_list = JSON.parse(JSON.stringify(AI4Chem));
+
+    const rows = document.querySelector('.rows')
+
+    rows.innerHTML = AI4Chem_list.map((items, index) => {
+        return items.map(item => {
+            return `
+                <div class="row">
+                    <div class="week${index + 1}"></div>
+                    <div>${item.topic}</div>
+                    <div>
+                        <a href="${item.link}" class="down_btn">
+                            detail_view
+                        </a>
+                    </div>
+                </div>
+            `
+        }).join('')
+    }).join('')
+    
+    for(let i = 1; i < 13; i++){
+        document.querySelector(`.week${i}`).innerHTML = i
+    }
+    
+</script>
+</body>
+</html>

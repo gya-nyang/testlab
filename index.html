@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAIL</title>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+  <header></header>
+
+  <main>
+    <section class="hero_area">
+        <div class="wrap">
+          <div class="l_content">
+            <h2 class="typo">
+              We are pioneering
+              <br>
+              the integration
+              <br>
+              of artificial intelligence
+              <br>
+              with chemical research
+            </h2>
+            <a href="#none">자세히 보기</a>
+          </div>
+          <div class="r_content">
+            <img src="./images/hero.jpg" alt="">
+          </div>
+        </div>
+      </section>
+      <section class="rsearch_area">
+        <div class="wrap">
+          <h2>
+            <span>Research</span>
+          </h2>
+          <div class="content">
+            <div class="img_box"></div>
+            <ul class="research_list">
+              <li class="item">
+                <a href="#none">
+                  <i class="icon"><img src="./images/icon_main_01.png" alt=""></i>
+                  <h3 class="cate_title">Database Development</h3>
+                  <p class="desc">
+                    체계적인 데이터의 중요성을 인지하고, 문헌에서 화학 정보를 자동으로 추출하고 정리하는 시스템을 개발합니다. 이러한 데이터베이스는 머신러닝 모델 개발을 강화하고 학계의 협력 연구를 촉진합니다.
+                  </p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#none">
+                  <i class="icon"><img src="./images/icon_main_02.png" alt=""></i>
+                  <h3 class="cate_title">Prediction of Physical
+                    Properties</h3>
+                  <p class="desc">
+                    머신러닝 모델과 양자화학 계산을 활용하여 분자의 광학적 특성이나 용해도와 같은 물리적 특성을 예측합니다. 
+                  </p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#none">
+                  <i class="icon"><img src="./images/icon_main_03.png" alt=""></i>
+                  <h3 class="cate_title">De Novo Molecular Design</h3>
+                  <p class="desc">
+                    양자화학 계산과 머신러닝으로부터 얻은 통찰을 바탕으로, 화학적 실현 가능성과 고성능을 동시에 만족하는 분자를 설계하여 혁신적인 소재를 발굴합니다.
+                  </p>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#none">
+                  <i class="icon"><img src="./images/icon_main_04.png" alt=""></i>
+                  <h3 class="cate_title">Chemical Reaction
+                    Prediction</h3>
+                  <p class="desc">
+                    화학 반응의 메커니즘을 예측하는 AI 모델을 개발하고, 양자화학 계산을 통해 반응 경로를 심도 있게 이해하며, 발생 가능한 부산물이나 불순물을 예측합니다. 
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="publication_area">
+        <div class="wrap">
+          <h2>
+            <span>Publication</span>
+          </h2>
+          <div class="content">
+            <ul>
+              <!-- <li>
+                <img src="./images/publication/ACSCentSci_Fron_cover.jpg" alt="">
+              </li>
+              <li>
+                <img src="./images/publication/JACSAu_Fornt_cover.jpg" alt="">
+              </li>
+              <li>
+                <img src="./images/publication/JCIM_Fornt_cover.jpg" alt="">
+              </li>
+              <li>
+                <img src="./images/publication/NJC_Front_cover.png" alt="">
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </section>
+    
+  </main>
+
+  <footer></footer>
+
+  <script src="./data/common.json"></script>
+  <script src="./data/index.json"></script>
+  <script src="./js/common.js"></script>
+  <script>
+    const researchSection = JSON.parse(JSON.stringify(ResearchSection));
+    const publicationSection = JSON.parse(JSON.stringify(PublicationSection));
+
+    // 리서치 부분 텍스트
+    const rsearch_area_text = document.querySelector('.rsearch_area h2')
+    rsearch_area_text.innerHTML += `${researchSection.text}`
+
+    // 논문 부분 텍스트
+    const publication_area_text = document.querySelector('.publication_area h2')
+    publication_area_text.innerHTML += `${publicationSection.text}`
+    
+    // 논문 이미지
+    const publication_area_images = document.querySelector('.publication_area .content ul')
+
+    publication_area_images.innerHTML = publicationSection.image.map(img => {
+      return `
+        <li>
+          <img src="./images/publication/${img}" alt="">
+        </li>
+      `
+    }).join('')
+  </script>
+</body>
+</html>

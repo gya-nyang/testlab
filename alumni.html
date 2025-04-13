@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAIL</title>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/sub.css">
+</head>
+<body>
+  <header></header>
+  <main>
+    <section class="spot">
+      Alumni
+    </section>
+    <section class="members_wrap">
+        <div class="wrap">
+          <div class="content postdocs_area">
+            <div class="content_title">Postdocs</div>
+            <ul class="member_list">
+              
+            </ul>
+          </div>
+        </div>
+    </section>
+  </main>
+  <footer></footer>
+
+  <!-- header, footer -->
+  <script src="./data/common.json"></script>
+  <script src="./js/common.js"></script>
+
+  <script src="./data/principal_investigator.json"></script>
+
+  <script type="module">
+    import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+    const member_list = document.querySelector('.member_list')
+    
+    let members = []
+    d3.csv("/data/members.csv").then(function (data) {
+      
+      members = data.filter(member => {
+        if(member.Status == 'Alumni'){
+          return members.push(member)
+        }
+      })      
+
+      member_list.innerHTML = members.map(member => {
+        return `
+          <li class="member">
+            <div class="t_box">
+              <div class="joined">Joined in <span>${member.Joined}</span></div>
+              ${
+                member.Graduate != ''
+                ? `<div class="graduated">Graduated in <span>${member.Graduate}</span></div>`
+                :''
+              }
+            </div>
+            <div class="m_box">
+              <div class="profile_area">
+                <img src="/images/members/${member.Picture != ''?member.Picture:`no_profile.jpg`}" alt="">
+              </div>
+            </div>
+            <div class="b_box">
+              <div class="position">${member.CurrentPosition =! ''?member.CurrentPosition:member.Position}</div>
+              <div class="name">
+                ${member.KoreanName}
+                <span>박사</span>
+              </div>
+              <div class="en_name">
+                ${member.Name}
+              </div>
+              <ul class="contact">
+                <li class="email">
+                  <a href="mailto:${member.email}">EMAIL</a>
+                </li>
+                ${
+                  member.Google != ''
+                  ? `
+                    <li class="google_scholar">
+                      <a href="${member.Google}" target="_blank">GOOGLE SCHOLAR</a>
+                    </li>
+                  `
+                  :''
+                }
+                
+              </ul>
+            </div>
+            ${
+              member.Thesis != ''
+              ? `
+                <div class="add_box">
+                  <div class="thesis">${member.Thesis}</div>
+                  <div class="desc">
+                    ${member.Thesis}
+                  </div>
+                </div>
+              `
+              : ''
+            }
+            
+          </li>
+        `
+      }).join('')
+    })
+  </script>
+</body>
+</html>

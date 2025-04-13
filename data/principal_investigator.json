@@ -1,0 +1,61 @@
+    Profile = {
+        // 줄바꿈 필요한 부분에는 \n 추가하기
+        "name": "정준영",
+        "position": "조교수",
+        "office": "국민대학교 과학기술대학 응용화학부 \n 과학기술관 000호",
+        "en_name": "Joonyoung F. Joung",
+        "en_position": "Assistant Professor",
+        "en_office": "Department of Applied Chemistry, \nCollege of Science and Technology,\n Kookmin University",
+        "phone": "(+82)-2-",
+        "email": "jfjoung@kookmin.ac.kr"
+    }
+
+    Education = [
+        // 데이터 형식 - 기입할 항목만 작성
+        // {
+        //     "when": "",
+        //     "what": "",
+        //     "link_txt": "",
+        //     "link": ""
+        // },
+        {
+            "when": "2020. 08",
+            "what": "Physical Chemistry, Korea University, Seoul, Korea, Ph. D.\n",
+            "link_txt": "Advisor: Prof. Sungnam Park",
+            "link": "여기에 링크를 추가"
+        },
+        {
+            "when": "2015. 02",
+            "what": "Chemistry, Inha University, Seoul, Korea, B.S.",
+        }
+    ]
+
+    CareerSummary = [
+        // 데이터 형식 - 기입할 항목만 작성
+        // {
+        //     "when": "",
+        //     "what": "",
+        //     "link_txt": "",
+        //     "link": ""
+        // },
+        {
+            "when": "2025.03 - Present",
+            "what": "Assistant Professor, Department of Applied Chemistry,Kookmin University",
+        },
+        {
+            "when": "2022.09 - 2025.02",
+            "what": "Postdoctoral associate, Department of Chemical Engineering, MIT\n",
+            "link_txt": "Advisor: Prof. Connor W. Coley",
+            "link": "여기에 링크를 추가"
+        },
+        {
+            "when": "2020.09 - 2022.07",
+            "what": "Postdoctoral research associate, Department of Chemistry, Korea University\n",
+            "link_txt": "Advisor: Prof. Sungnam Park",
+            "link": "여기에 링크를 추가"
+        },
+        {
+            "when": "2020.09 - 2022.07",
+            "what": "Research Professor, Research Institute for Natural Science, Korea University",
+        }
+    ]

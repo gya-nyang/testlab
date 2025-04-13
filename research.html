@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAIL</title>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/sub.css">
+</head>
+<body>
+  <header></header>
+  <main>
+    <section class="spot">
+      Research
+    </section>
+    <section class="research_wrap">
+      <div class="wrap">
+          <nav class="nav">
+              <ul class="cate_list">
+                  <li class="active">
+                      <a>Data</a>
+                  </li>
+                  <li>
+                      <a>Quantum chemical modeling</a>
+                  </li>
+                  <li>
+                      <a>Property prediction</a>
+                  </li>
+                  <li>
+                      <a>Reaction prediction</a>
+                  </li>
+                  <li>
+                      <a>Materials generation</a>
+                  </li>
+                  <li>
+                      <a>Spectroscopy</a>
+                  </li>
+              </ul>
+          </nav>
+          <div class="f-row">
+              <div class="l_content">
+                  <div class="content content_1">
+                      <div class="content_title">
+                          Data
+                      </div>
+                      <div class="desc">
+                          <p class="eng">
+                              At the Spectroscopy and AI Lab (SAIL) led by Professor Joonyoung F. Joung, we are pioneering the integration of artificial intelligence with chemical research to solve complex problems in reaction prediction and new material discovery. Our approach combines experimental techniques, computational modeling, and machine learning to accelerate the development of innovative chemical solutions.
+                          </p>
+                          <p class="kor">
+                              국민대학교 응용화학부 SAIL 연구실(Spectroscopy and AI Lab)에서는 인공지능과 화학 연구를 융합하여 신소재 개발을 가속화하고 화학 반응 예측을 향상시키는 데 집중하고 있습니다.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="content content_2 d-none">
+                      <div class="content_title">
+                          Quantum chemical modeling
+                      </div>
+                      <div class="desc">
+                          <p class="eng">
+                              
+                          </p>
+                          <p class="kor">
+                              
+                          </p>
+                      </div>
+                  </div>
+                  <div class="content content_3 d-none">
+                      <div class="content_title">
+                          Property prediction
+                      </div>
+                      <div class="desc">
+                          <p class="eng">
+                              
+                          </p>
+                          <p class="kor">
+                              
+                          </p>
+                      </div>
+                  </div>
+                  <div class="content content_4 d-none">
+                      <div class="content_title">
+                          Reaction prediction
+                      </div>
+                      <div class="desc">
+                          <p class="eng">
+                              
+                          </p>
+                          <p class="kor">
+                              
+                          </p>
+                      </div>
+                  </div>
+                  <div class="content content_5 d-none">
+                      <div class="content_title">
+                          Materials generation
+                      </div>
+                      <div class="desc">
+                          <p class="eng">
+                              
+                          </p>
+                          <p class="kor">
+                              
+                          </p>
+                      </div>
+                  </div>
+                  <div class="content content_6 d-none">
+                      <div class="content_title">
+                          Spectroscopy
+                      </div>
+                      <div class="desc">
+                          <p class="eng">
+                              
+                          </p>
+                          <p class="kor">
+                              
+                          </p>
+                      </div>
+                  </div>
+                  
+              </div>
+              <div class="r_content">
+                  <div class="fig_wrap">
+                      <div class="fig_title">
+                          Materials<br>discovery
+                      </div>
+                      <div class="circle">
+                          <div class="figure fig1">
+                              <img src="/images/research_fig1.svg" alt="">
+                          </div>
+                          <div class="figure fig2">
+                              <img src="/images/research_fig2.svg" alt="">
+                          </div>
+                          <div class="figure fig3">
+                              <img src="/images/research_fig3.svg" alt="">
+                          </div>
+                          <div class="figure fig4">
+                              <img src="/images/research_fig4.svg" alt="">
+                          </div>
+                          <div class="figure fig5">
+                              <img src="/images/research_fig5.svg" alt="">
+                          </div>
+                          <div class="figure fig6">
+                              <img src="/images/research_fig6.svg" alt="">
+                          </div>
+                          <div class="figure fig7">
+                              <img src="/images/research_fig7.svg" alt="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+
+  <!-- header, footer -->
+  <script src="./data/common.json"></script>
+  <script src="./js/common.js"></script>
+
+  <script>
+    const cate_list = document.querySelectorAll('.cate_list li')
+    const content_list = [
+      document.querySelector('.content_1'),
+      document.querySelector('.content_2'),
+      document.querySelector('.content_3'),
+      document.querySelector('.content_4'),
+      document.querySelector('.content_5'),
+      document.querySelector('.content_6')
+    ]
+
+    const circle = document.querySelector('.circle'),
+          figures = document.querySelectorAll('.figure')
+
+    cate_list.forEach((cate, i) => {
+      cate.addEventListener('click', () => {
+        cate_list.forEach(disable => disable.classList.remove('active'))
+        content_list.forEach(disable => disable.classList.add('d-none'))
+        cate.classList.add('active')
+        content_list[i].classList.remove('d-none')
+
+        circle.style.transform = `rotate(${72 * i}deg)`
+        figures.forEach(figure => figure.style.transform = `rotate(${-72 * i}deg)`)
+      })
+    })
+</script>
+</body>
+</html>

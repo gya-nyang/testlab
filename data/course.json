@@ -1,0 +1,114 @@
+AI4Chem = [
+    [
+        {
+            "topic": "Python and Jupyter",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Pandas",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Plotting data",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Intro to RDKit",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Supervised ML",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Introduction to Deep Learning",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Graph Neural Network",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "GNN example - chemprop",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Dimensionality reduction",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Clustering",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Pd dimers discovery by kMeans",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "De novo molecule generation (VAE)",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "De novo molecule generation (SMILES-LSTM)",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Chemical reactions prediction: Template-free methods",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Retrosynthesis: Template-based methods",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Atom mapping",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Reaction fingerprints",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Yield prediction",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Bayesian Optimisation",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Model deployment: Git(hub)",
+            "link": "여기에 링크 입력"
+        },
+        {
+            "topic": "Model deployment: Streamlit",
+            "link": "여기에 링크 입력"
+        }
+    ],
+    [
+        {
+            "topic": "Guest lecture: AlphaFold2",
+            "link": "여기에 링크 입력"
+        }
+    ],
+]

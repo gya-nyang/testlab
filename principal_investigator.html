@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAIL</title>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/sub.css">
+</head>
+<body>
+  <header></header>
+  <main>
+    <section class="spot">
+        principal investigator
+    </section>
+    <section class="principal_investigator_wrap">
+        <div class="wrap ">
+          <div class="content profile_area">
+            <div class="profile">
+              <img src="./images/profile.jpg" alt="">
+            </div>
+            <div class="r_content"></div>
+          </div>
+          <div class="content education">
+            <div class="content_title">Education</div>
+            <dl></dl>
+          </div>
+          <div class="content career">
+            <div class="content_title">Career Summary</div>
+            <dl></dl>
+          </div>
+        </div>
+    </section>
+  </main>
+  <footer></footer>
+
+  <!-- header, footer -->
+  <script src="./data/common.json"></script>
+  <script src="./js/common.js"></script>
+
+  <script src="./data/principal_investigator.json"></script>
+
+  <script>
+    const profile = JSON.parse(JSON.stringify(Profile));
+    const education = JSON.parse(JSON.stringify(Education));
+    const careerSummary = JSON.parse(JSON.stringify(CareerSummary));
+
+
+    // 프로필 영역
+    const profile_section = document.querySelector('.profile_area .r_content')
+
+    profile_section.innerHTML = `
+      <div class="ko">
+        <div class="name">${profile.name}</div>
+        ${
+          profile.position != ''
+          ? `<div class="position">${profile.position}</div>`
+          : ''
+        }
+        <div class="office">${profile.office.replaceAll('\n', '<br>')}</div>
+      </div>
+      <div class="en">
+        <div class="name">${profile.en_name}</div>
+        ${
+          profile.en_position != ''
+          ? `<div class="position">${profile.en_position}</div>`
+          : ''
+        }
+        <div class="office">${profile.en_office.replaceAll('\n', '<br>')}}</div>
+      </div>
+      <div class="contact">
+        <div class="phone">${profile.phone}</div>
+        <div class="email">
+          <a href="mailto:${profile.email}">${profile.email}</a>
+        </div>
+      </div>
+    `
+
+    // Education
+    const education_section = document.querySelector('.education dl')
+
+    education_section.innerHTML = education.map(item => {
+      return `
+        <dt>${item.when}</dt>
+        <dd>
+          ${item.what.replaceAll('\n', '<br>')}
+          ${
+            item.link_txt
+            ? `(<a href="${item.link}" target="_blank">${item.link_txt}</a>)`
+            : ''
+          }
+        </dd>
+      `
+    }).join('')
+    
+    // Career Summary
+    const careerSummary_section = document.querySelector('.career dl')
+
+    careerSummary_section.innerHTML = careerSummary.map(item => {
+      return `
+        <dt>${item.when}</dt>
+        <dd>
+          ${item.what.replaceAll('\n', '<br>')}
+          ${
+            item.link_txt
+            ? `(<a href="${item.link}" target="_blank">${item.link_txt}</a>)`
+            : ''
+          }
+        </dd>
+      `
+    }).join('')
+
+  </script>
+</body>
+</html>
