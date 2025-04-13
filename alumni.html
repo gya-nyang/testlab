@@ -39,7 +39,7 @@
     const member_list = document.querySelector('.member_list')
     
     let members = []
-    d3.csv("/data/members.csv").then(function (data) {
+    d3.csv("./data/members.csv").then(function (data) {
       
       members = data.filter(member => {
         if(member.Status == 'Alumni'){
@@ -60,7 +60,7 @@
             </div>
             <div class="m_box">
               <div class="profile_area">
-                <img src="/images/members/${member.Picture != ''?member.Picture:`no_profile.jpg`}" alt="">
+                <img src="./images/members/${member.Picture != ''?member.Picture:`no_profile.jpg`}" alt="">
               </div>
             </div>
             <div class="b_box">

@@ -243,7 +243,7 @@
     const label_list = JSON.parse(JSON.stringify(Label));
 
     let publication_itmes = []
-    d3.csv("/data/publication.csv").then(function (data) {
+    d3.csv("./data/publication.csv").then(function (data) {
       publication_itmes = data.reverse()
 
       const length = publication_itmes.length
@@ -316,7 +316,7 @@
                         <div class="r_box">
                           ${
                             (item.FrontCover != '')
-                            ?`<img src="/images/publication/${item.FrontCover}" alt="">`
+                            ?`<img src="./images/publication/${item.FrontCover}" alt="">`
                             :''
                           }
                         </div>
