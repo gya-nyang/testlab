@@ -39,7 +39,7 @@
     const member_list = document.querySelector('.member_list')
     
     let members = []
-    d3.csv("/data/members.csv").then(function (data) {
+    d3.csv("./data/members.csv").then(function (data) {
       
       members = data.filter(member => {
         if(member.Status == 'Current'){
